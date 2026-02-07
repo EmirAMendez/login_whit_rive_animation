@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rive/rive.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -10,13 +11,17 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      //Evita que se quite el espacio del nudge
+    return Scaffold(
       body: SafeArea(
+        // Evita que el contenido se superponga con el notch
         child: Column(
           children: [
-            Expanded(child: RiveAnimation.asset('animated_login_bear.riv')),
-          ]
+            Expanded(
+              child: RiveAnimation.asset(
+                'assets/animated_login_bear.riv',
+              ),
+            ),
+          ],
         ),
       ),
     );
