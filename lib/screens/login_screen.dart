@@ -20,6 +20,27 @@ class _LoginScreenState extends State<LoginScreen> {
   SMITrigger? _trigSuccess;
   SMITrigger? _trigFail;
 
+//1.1)crear variables para focusnode
+  final FocusNode _emailFocusNode = FocusNode();
+  final FocusNode _passwordFocusNode = FocusNode();
+
+//1.2)Listeners para detectar cuando el usuario enfoca o desenfoca los campos de texto
+  @override
+  void initState() {
+    super.initState();
+    _emailFocusNode.addListener(() {
+      if (_emailFocusNode.hasFocus) {
+        if (_isHandsUp != null) {
+        //No tapes los ojos al ver email
+        _isHandsUp?.change(false);
+        }
+      }
+    });
+    _passwordFocusNode.addListener(() {
+      //manos arriba al enfocar el campo de contraseña
+        _isHandsUp?.change(_passwordFocusNode.hasFocus);
+        });
+      }
 
   @override
   Widget build(BuildContext context) {
@@ -56,11 +77,14 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               //Para separacion
               const SizedBox(height: 10),
+              //Campo de texto para el email
               TextField(
+                //1.3)Asignar los focusnode a los campos de texto
+                focusNode: _emailFocusNode,
                 onChanged: (value) {
                   if (_isHandsUp != null) {
                     //No tapes los ojos al ver email
-                    _isHandsUp!.change(false);
+                  // _isHandsUp!.change(false);
                   }
                   if (_isChecking == null) return;
                   //Activa  el modo chisme
@@ -79,10 +103,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 10),
               TextField(
+                //1.3)Asignar los focusnode a los campos de texto
+                focusNode: _passwordFocusNode,
                 onChanged: (value) {
                   if (_isHandsUp != null) {
                     //No modo chisme
-                    _isChecking!.change(false);
+                    //_isChecking!.change(false);
                   }
                   if (_isHandsUp == null) return;
                   //Arriba las manos
@@ -115,5 +141,12 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+  //Liberar recursos de los focusnode
+  @override
+  void dispose() {
+    _emailFocusNode.dispose();
+    _passwordFocusNode.dispose();
+    super.dispose();
   }
 }
