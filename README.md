@@ -1,16 +1,110 @@
-# login_whit_rive_animation
+🐻 Animated Login with Rive & Flutter 🐻 
 
-A new Flutter project.
+An interactive login screen built using Flutter and Rive, where an animated polar bear reacts in real-time based on user interaction. This project was developed as part of the Computer Graphics (Graficación) course.
 
-## Getting Started
+-------------------------------------------------------------------------------------------------------------------------------------
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+✨ Features ✨
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Interactive Animation: Controlled by a sophisticated State Machine.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Dynamic Eye Tracking: The bear follows the cursor while you type your email.
+
+Privacy Mode: The bear covers its eyes while you type your password.
+
+State-Based Feedback: Visual triggers for successful and failed login attempts.
+
+Responsive Design: Optimized for mobile, web, and desktop.
+
+Password Visibility: Includes a toggle button for the password field.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+💡 What is Rive? 💡
+
+Rive is a real-time interactive vector animation tool. Unlike traditional GIFs or videos, Rive allows for:
+
+Dynamic Interaction: Animations can react to inputs.
+
+Programmatic Control: Developers can manipulate animations through code.
+
+Efficiency: It is lightweight and high-performance.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+⚙️ What is a State Machine? ⚙️
+
+A State Machine is the logic system that controls how animations transition between different states. In this project, it uses:
+
+Boolean inputs (SMIBool): e.g., isChecking, isHandsUp.
+
+Triggers (SMITrigger): e.g., trigSuccess, trigFail.
+
+Automatic Transitions: Ensures smooth movement between the bear's expressions.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+🛠 Technologies Used 🛠
+
+   🎯 Dart - Programming Language
+   
+   💙 Flutter - UI Framework
+   
+   🎨 Rive - Animation Tool
+   
+   🧠 Rive State Machine - Animation Logic
+   
+   📁 Git & GitHub - Version Control
+   
+   💻 Visual Studio Code - IDE
+
+   -------------------------------------------------------------------------------------------------------------------------------------
+
+
+📂 Project Structure 📂
+
+The core logic is located within the lib folder:
+
+lib/
+├── main.dart                 # Entry point of the application
+
+├── screens/
+
+│   └── login_screen.dart     # Main UI and Rive integration logic
+
+└── assets/
+
+    └── animated_login_bear.riv # Rive animation file
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+🎬 Demo
+coming soon
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+🎓 Academic Information 🎓
+Course: Computer Graphics (Graficación)
+
+Professor: Rodrigo Fidel Gaxiola Sosa
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+🎨 Animation Credits 🎨
+The animation used in this project was obtained from the Rive Marketplace:
+
+Original Animation: Login Bear Remix
+
+Created by: dexterc
+
+Design Reference: Dribbble Link
